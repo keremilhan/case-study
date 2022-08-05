@@ -16,11 +16,7 @@ const Slider = () => {
     setTimeout(() =>{
       setCurrent(current === length - 1 ? 0 : current + 1)
     }, 1000);
-  }, [current]);
-
-  if(!Array.isArray(sliderImages) || sliderImages.length <= 0){
-    return null
-  }
+  }, [current,length]);
 
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current -1)
