@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import SliderItem from '../SliderItem/SliderItem'
 import { sliderImages } from './sliderImages'
 import arrowLeft from '../../assets/arrow-left.png'
@@ -11,6 +11,12 @@ const Slider = () => {
   const [current, setCurrent] = useState(0)
 
   const length= sliderImages.length
+
+  useEffect(() => {
+    setTimeout(() =>{
+      setCurrent(current === length - 1 ? 0 : current + 1)
+    }, 1000);
+  }, [current]);
 
   if(!Array.isArray(sliderImages) || sliderImages.length <= 0){
     return null
@@ -29,10 +35,6 @@ const Slider = () => {
   const handleBullet2 = () => {
     setCurrent(1)
   }
-
-  setInterval(() => {
-    setCurrent(current === 0 ? 1 : 0);
-  }, 1000);
 
   return (
     <SliderContainer>
