@@ -9,7 +9,5 @@ export const GlobalStyles = createGlobalStyle`
   }
   body{
     background: ${({ theme }) => theme.colors.cream};
-    width: 80%;
-    margin: auto;
   }
 `;

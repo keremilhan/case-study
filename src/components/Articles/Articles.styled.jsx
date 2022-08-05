@@ -3,8 +3,30 @@ import Flex from '../globalStyles/Flex'
 
 export const ArticlesContainer = styled(Flex)`
     gap: 4rem;
+    width: 80%;
+    margin: auto;
     margin-top: 8.5rem;
     line-height: 1.5rem;
+
+    @media only screen and (max-width: ${({theme}) => theme.screens.lg}){
+        width: 90%;
+        margin: auto;
+        margin-bottom: 2rem;
+        flex-direction: column;
+        align-items: center;
+     }
+
+     @media only screen and (max-width: ${({theme}) => theme.screens.sm}){
+
+
+        margin-top: 5rem;
+
+        img{
+            width: 90%;
+            margin: auto;
+
+        }
+     }
 `
 
 export const List = styled.ul` 
